@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drivers of Happiness</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ============================================================
+       EMBEDDING VISUALIZATIONS — three patterns, pick per chart:
+
+       1) D3: give the chart a container div with an id, then load a
+          script that draws into it. Put your D3 code in /charts/.
+
+            <div id="my-d3-chart" class="viz"></div>
+            <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+            <script src="charts/my-d3-chart.js"></script>
+
+       2) Altair: in Python, export the chart as a standalone HTML file
+          (chart.save("charts/my-chart.html")), then drop it in with
+          an iframe:
+
+            <iframe src="charts/my-chart.html" class="viz-frame"
+                    loading="lazy" title="My chart"></iframe>
+
+          (Alternative: chart.save("my-chart.json") + vega-embed, but
+          the iframe route is simpler and just as good for this.)
+
+       3) Tableau: on Tableau Public, click Share > Embed Code and
+          paste the whole <div class='tableauPlaceholder'>...</div>
+          + <script> block where the chart should go. Or use the
+          share link in an iframe:
+
+            <iframe src="https://public.tableau.com/views/YourViz?:embed=y&:showVizHome=no"
+                    class="viz-frame" loading="lazy" title="My Tableau viz"></iframe>
+
+       Each [placeholder] box below can be deleted and replaced with
+       one of the snippets above. See README.md for details.
+       ============================================================ -->
+</head>
+<body>
+
+  <!-- ===================== HERO / INTRO ===================== -->
+  <header class="hero">
+    <p class="hero-kicker">DATASCI 209 &middot; Data Visualization</p>
+    <h1>Drivers of Happiness</h1>
+    <p class="hero-sub">Exploring what shapes life satisfaction around the world, using the World Happiness Report</p>
+
+    <div class="placeholder placeholder-text">
+      [intro — write your project introduction here]
+    </div>
+  </header>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="task-nav">
+    <a href="#task-1">Happiest &amp; Least Happy</a>
+    <a href="#task-2">Compare Countries</a>
+    <a href="#task-3">Happiness Over Time</a>
+    <a href="#task-4">Demographics</a>
+    <a href="#task-5">Deviance Map</a>
+    <a href="#task-6">Deviance Drivers</a>
+  </nav>
+
+  <main>
+
+    <!-- ===================== TASK 1 ===================== -->
+    <section id="task-1" class="task">
+      <p class="task-label">Task 1</p>
+      <h2>Quickly identify the most and least happy countries</h2>
+
+      <div class="placeholder placeholder-text">
+        [text — description of the WHR and its model of happiness]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [map — world map visualizing life_evaluation]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [list — countries in descending happiness order]
+      </div>
+
+      <div class="placeholder placeholder-component">
+        [component — click on map/list takes you to (1) a country page, or (2) reveals relevant tables on this page]
+      </div>
+    </section>
+
+    <!-- ===================== TASK 2 ===================== -->
+    <section id="task-2" class="task">
+      <p class="task-label">Task 2</p>
+      <h2>Compare countries and understand the factors underlying their life satisfaction scores</h2>
+
+      <div class="viz-row">
+        <div class="placeholder placeholder-viz">
+          [slopegraph — 5 countries that increased happiness the most over 10 (or 20) years]
+        </div>
+        <div class="placeholder placeholder-viz">
+          [slopegraph — 5 countries that decreased happiness the most over 10 (or 20) years]
+        </div>
+      </div>
+
+      <div class="placeholder placeholder-component">
+        [component — country selector: allow user to select countries to visualize (up to x countries)]
+      </div>
+
+      <div class="placeholder placeholder-component">
+        [component — select a country to see explanatory factors, with percent-explained table]
+      </div>
+    </section>
+
+    <!-- ===================== TASK 3 ===================== -->
+    <section id="task-3" class="task">
+      <p class="task-label">Task 3</p>
+      <h2>Track the evolution of happiness scores for a country over time</h2>
+
+      <div class="placeholder placeholder-text">
+        [text — description of life_evaluation, positive_affect, and/or positive experience index]
+      </div>
+
+      <div class="placeholder placeholder-text">
+        [text — description of the x variables used and their relative importance in the model]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [chart — correlation between life_evaluation (and/or positive affect / positive experience index) and a second user-selected variable, with trend line]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [chart — optional Hans Rosling–style animated bubble chart]
+      </div>
+    </section>
+
+    <!-- ===================== TASK 4 ===================== -->
+    <section id="task-4" class="task">
+      <p class="task-label">Task 4</p>
+      <h2>Explore demographics of select countries with respect to happiness</h2>
+
+      <div class="placeholder placeholder-viz">
+        [chart — evolution of happiness by age or gender (etc.) over time in select countries, if there are meaningful findings]
+      </div>
+    </section>
+
+    <!-- ===================== TASK 5 ===================== -->
+    <section id="task-5" class="task">
+      <p class="task-label">Task 5</p>
+      <h2>Identify examples of positive and negative deviance</h2>
+
+      <div class="placeholder placeholder-text">
+        [text — how we identify positive/negative deviance: over 20 years, model-adjusted scores]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [map — visualizing the degree of positive/negative deviance]
+      </div>
+
+      <div class="placeholder placeholder-viz">
+        [list — countries from most positive deviant down]
+      </div>
+
+      <div class="placeholder placeholder-component">
+        [component — optional toggle between this deviance view and the Task 1 happiness view]
+      </div>
+    </section>
+
+    <!-- ===================== TASK 6 ===================== -->
+    <section id="task-6" class="task">
+      <p class="task-label">Task 6</p>
+      <h2>Understand what drives positive and negative deviance</h2>
+
+      <div class="placeholder placeholder-viz">
+        [bar charts — two bar charts stacked on top of each other: a country's average score per factor vs. the region/income-group average per factor, showing where the deviance advantage is]
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>DATASCI 209 &middot; Drivers of Happiness &middot; Data: <a href="https://worldhappiness.report/" target="_blank" rel="noopener">World Happiness Report</a></p>
+    <div class="placeholder placeholder-text">
+      [team — names, acknowledgments, data notes]
+    </div>
+  </footer>
+
+</body>
+</html>

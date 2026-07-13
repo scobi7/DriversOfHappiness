@@ -1,0 +1,217 @@
+/* =========================================================
+   Drivers of Happiness — site theme
+   Warm, sunny palette to match the topic.
+   ========================================================= */
+
+:root {
+  --sun: #f6b93b;          /* primary accent — warm yellow */
+  --sun-deep: #e58e26;     /* darker accent for hovers/labels */
+  --sky: #fdf6e3;          /* warm off-white page background */
+  --ink: #2f3542;          /* main text */
+  --ink-soft: #6b7280;     /* secondary text */
+  --card: #ffffff;
+  --line: #ece4d4;
+  --placeholder-bg: #fffbef;
+  --placeholder-border: #f6b93b;
+  --max-width: 960px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: var(--sky);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+  background: linear-gradient(180deg, #fff4d6 0%, var(--sky) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: var(--sun-deep);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  margin: 0.75rem auto 2rem;
+  max-width: 40rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.hero .placeholder {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* ---------- nav ---------- */
+
+.task-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  background: rgba(253, 246, 227, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.task-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.task-nav a:hover {
+  background: var(--sun);
+  color: #fff;
+}
+
+/* ---------- task sections ---------- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+.task {
+  padding: 3.5rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 4rem; /* keep headings visible under sticky nav */
+}
+
+.task:last-of-type {
+  border-bottom: none;
+}
+
+.task-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sun-deep);
+  margin-bottom: 0.4rem;
+}
+
+.task h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- placeholders ---------- */
+
+.placeholder {
+  border: 2px dashed var(--placeholder-border);
+  border-radius: 10px;
+  background: var(--placeholder-bg);
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.placeholder-viz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 320px;
+}
+
+.placeholder-component {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* two placeholders side by side (e.g. the two slopegraphs) */
+.viz-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.viz-row .placeholder {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .viz-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- real viz containers (use once you replace placeholders) ---------- */
+
+/* wrap D3 charts in <div class="viz"> */
+.viz {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* use on Altair / Tableau iframes */
+.viz-frame {
+  width: 100%;
+  min-height: 480px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--sun-deep);
+}
