@@ -87,46 +87,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.intro-sub {
-  max-width: 44rem;
-  margin: 0 auto 1.75rem;
-  text-align: center;
-  color: var(--ink-soft);
-}
-
-.factor-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.factor-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
-  text-align: center;
-}
-
-.factor-icon {
-  font-size: 1.6rem;
-  line-height: 1.2;
-}
-
-.factor-name {
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.factor-note {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
 .intro-why {
   max-width: 44rem;
   margin: 0 auto;
@@ -135,12 +95,6 @@ body {
   color: var(--ink-soft);
   border-top: 1px solid var(--line);
   padding-top: 1.25rem;
-}
-
-@media (max-width: 720px) {
-  .factor-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 /* ---------- nav ---------- */
