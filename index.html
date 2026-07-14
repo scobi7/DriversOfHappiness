@@ -46,8 +46,43 @@
     <h1>Drivers of Happiness</h1>
     <p class="hero-sub">Exploring what shapes life satisfaction around the world, using the World Happiness Report</p>
 
-    <div class="placeholder placeholder-text">
-      [intro — write your project introduction here]
+    <div class="intro">
+      <p class="intro-lead">What are the drivers of happiness?</p>
+      <p class="intro-sub">
+        GDP is useful, but it doesn't capture the whole story. How people rate
+        their own lives is shaped by a much wider set of forces &mdash; and by
+        newer ones, like technology, whose impact is still an open question.
+      </p>
+
+      <div class="factor-grid">
+        <div class="factor-card">
+          <span class="factor-icon">&#128176;</span>
+          <span class="factor-name">Economic</span>
+          <span class="factor-note">GDP per capita &mdash; useful, but not the whole story</span>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">&#129309;</span>
+          <span class="factor-name">Societal</span>
+          <span class="factor-note">Social support and healthy life expectancy</span>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">&#9878;&#65039;</span>
+          <span class="factor-name">Institutional</span>
+          <span class="factor-note">Rule of law, freedom, and trust in government</span>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">&#128241;</span>
+          <span class="factor-name">Technological</span>
+          <span class="factor-note">Does adopting technology make us happier?</span>
+        </div>
+      </div>
+
+      <p class="intro-why">
+        <strong>Why it matters:</strong> understanding the relative importance of
+        economic, societal, institutional, and technological factors in citizens'
+        happiness and well-being could help policymakers create more effective
+        legislation.
+      </p>
     </div>
   </header>
 
@@ -68,17 +103,35 @@
       <p class="task-label">Task 1</p>
       <h2>Quickly identify the most and least happy countries</h2>
 
-      <div class="placeholder placeholder-text">
-        [text — description of the WHR and its model of happiness]
+      <div class="task-text">
+        <p>
+          Our first visualization is a baseline choropleth map of global
+          happiness, starting in 2006. We wanted to begin with the simplest
+          question: <em>where</em> are countries happier?
+        </p>
+        <p>
+          Color encodes the life evaluation score &mdash; greener countries
+          score higher, redder countries score lower. This gives a quick
+          global overview and makes geographic patterns easier to notice.
+          Instead of scanning a table of scores, you can immediately see
+          regional clusters &mdash; some regions run consistently higher or
+          lower in happiness &mdash; which leads into the next question of
+          why those differences might exist.
+        </p>
+        <p>
+          At this stage, the map is mostly descriptive. It does not explain
+          the causes yet, but it gives us a starting point for asking better
+          questions.
+        </p>
       </div>
 
-      <div class="placeholder placeholder-viz">
-        [map — world map visualizing life_evaluation]
-      </div>
+      <iframe src="charts/task1_choropleth.html" class="viz-frame"
+              loading="lazy" style="min-height: 660px"
+              title="World happiness choropleth with year slider and play button"></iframe>
 
-      <div class="placeholder placeholder-viz">
-        [list — countries in descending happiness order]
-      </div>
+      <iframe src="charts/task1_country_list.html" class="viz-frame"
+              loading="lazy" style="min-height: 640px"
+              title="Countries ranked by happiness"></iframe>
 
       <div class="placeholder placeholder-component">
         [component — click on map/list takes you to (1) a country page, or (2) reveals relevant tables on this page]
