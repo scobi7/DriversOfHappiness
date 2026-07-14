@@ -173,6 +173,10 @@ main {
   margin-top: 0.75rem;
 }
 
+.task-text .indent {
+  text-indent: 1.5em;
+}
+
 /* ---------- placeholders ---------- */
 
 .placeholder {
