@@ -1,42 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    #vis.vega-embed {
-      width: 100%;
-      display: flex;
-    }
-
-    #vis.vega-embed details,
-    #vis.vega-embed details summary {
-      position: relative;
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+<meta charset="utf-8">
+<title>Biggest gains in happiness</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 14px 16px;
+    background: #ffffff;
+  }
+  #picker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 12px; }
+  #picker .picker-label { color: #6b7280; font-size: 12px; margin-right: 2px; }
+  #picker button {
+    border: 1px solid #ece4d4;
+    background: #fffbef;
+    color: #6b7280;
+    font: inherit;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  #picker button:hover { border-color: #f6b93b; }
+  #picker button.on {
+    background: #f6b93b;
+    border-color: #f6b93b;
+    color: #ffffff;
+    font-weight: 600;
+  }
+</style>
 </head>
 <body>
-  <div id="vis"></div>
-  <script>
-    (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}, "axis": {"domainColor": "#ece4d4", "gridColor": "#ece4d4", "labelColor": "#6b7280", "labelFontSize": 11, "tickColor": "#ece4d4", "titleColor": "#2f3542", "titleFontSize": 12}, "background": "white", "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif", "title": {"anchor": "start", "color": "#2f3542", "fontSize": 17, "fontWeight": 700, "offset": 14, "subtitleColor": "#6b7280", "subtitleFontSize": 12, "subtitlePadding": 6}}, "layer": [{"mark": {"type": "line", "color": "#1a9850", "strokeWidth": 2}, "encoding": {"detail": {"field": "country", "type": "nominal"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "region", "title": "Region", "type": "nominal"}, {"field": "start_score", "format": ".2f", "title": "2006\u201308", "type": "quantitative"}, {"field": "end_score", "format": ".2f", "title": "2023\u201325", "type": "quantitative"}, {"field": "change", "format": "+.2f", "title": "Change", "type": "quantitative"}], "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"axis": {"tickCount": 5}, "field": "score", "scale": {"domain": [3, 7]}, "title": "Life evaluation (0\u201310)", "type": "quantitative"}}}, {"mark": {"type": "point", "color": "#1a9850", "filled": true, "size": 70, "stroke": "white", "strokeWidth": 1.5}, "encoding": {"detail": {"field": "country", "type": "nominal"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "region", "title": "Region", "type": "nominal"}, {"field": "start_score", "format": ".2f", "title": "2006\u201308", "type": "quantitative"}, {"field": "end_score", "format": ".2f", "title": "2023\u201325", "type": "quantitative"}, {"field": "change", "format": "+.2f", "title": "Change", "type": "quantitative"}], "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"axis": {"tickCount": 5}, "field": "score", "scale": {"domain": [3, 7]}, "title": "Life evaluation (0\u201310)", "type": "quantitative"}}}, {"mark": {"type": "text", "align": "right", "color": "#6b7280", "dx": -10, "fontSize": 11}, "encoding": {"text": {"field": "score", "format": ".1f", "type": "quantitative"}, "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"field": "label_y", "scale": {"domain": [3, 7]}, "type": "quantitative"}}, "transform": [{"filter": "(datum.period === '2006\u201308')"}]}, {"mark": {"type": "text", "align": "left", "color": "#2f3542", "dx": 10, "fontSize": 11, "fontWeight": 600}, "encoding": {"text": {"field": "label", "type": "nominal"}, "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"field": "label_y", "scale": {"domain": [3, 7]}, "type": "quantitative"}}, "transform": [{"filter": "(datum.period === '2023\u201325')"}, {"calculate": "datum.country + \"  \" + format(datum.score, \".1f\")", "as": "label"}]}], "data": {"name": "data-bf69fab254cc20ead61ccd59ffb44ff5"}, "height": 360, "padding": {"left": 5, "right": 15, "top": 5, "bottom": 5}, "title": {"text": "Biggest gains in happiness", "subtitle": "Average life evaluation, 3-year windows. Hover a line for details."}, "width": 270, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-bf69fab254cc20ead61ccd59ffb44ff5": [{"country": "Georgia", "region": "Post-Soviet Eurasia", "change": 1.6706535058730592, "start_score": 3.846131113125184, "end_score": 5.516784618998243, "period": "2006\u201308", "score": 3.846131113125184, "label_y": 3.846131113125184}, {"country": "Georgia", "region": "Post-Soviet Eurasia", "change": 1.6706535058730592, "start_score": 3.846131113125184, "end_score": 5.516784618998243, "period": "2023\u201325", "score": 5.516784618998243, "label_y": 5.516784618998243}, {"country": "Kosovo", "region": "Central and Eastern Europe", "change": 1.5968732425597132, "start_score": 5.312782952664878, "end_score": 6.909656195224591, "period": "2006\u201308", "score": 5.312782952664878, "label_y": 5.312782952664878}, {"country": "Kosovo", "region": "Central and Eastern Europe", "change": 1.5968732425597132, "start_score": 5.312782952664878, "end_score": 6.909656195224591, "period": "2023\u201325", "score": 6.909656195224591, "label_y": 6.909656195224591}, {"country": "Latvia", "region": "Central and Eastern Europe", "change": 1.524596246073263, "start_score": 4.84061638828619, "end_score": 6.365212634359453, "period": "2006\u201308", "score": 4.84061638828619, "label_y": 4.84061638828619}, {"country": "Latvia", "region": "Central and Eastern Europe", "change": 1.524596246073263, "start_score": 4.84061638828619, "end_score": 6.365212634359453, "period": "2023\u201325", "score": 6.365212634359453, "label_y": 6.365212634359453}, {"country": "Nicaragua", "region": "Latin America and the Caribbean", "change": 1.4691677544805488, "start_score": 4.8360256659156, "end_score": 6.305193420396149, "period": "2006\u201308", "score": 4.8360256659156, "label_y": 4.67061638828619}, {"country": "Nicaragua", "region": "Latin America and the Caribbean", "change": 1.4691677544805488, "start_score": 4.8360256659156, "end_score": 6.305193420396149, "period": "2023\u201325", "score": 6.305193420396149, "label_y": 6.195212634359453}, {"country": "Philippines", "region": "Southeast Asia", "change": 1.4281054924310537, "start_score": 4.777524388821861, "end_score": 6.205629881252914, "period": "2006\u201308", "score": 4.777524388821861, "label_y": 4.50061638828619}, {"country": "Philippines", "region": "Southeast Asia", "change": 1.4281054924310537, "start_score": 4.777524388821861, "end_score": 6.205629881252914, "period": "2023\u201325", "score": 6.205629881252914, "label_y": 6.025212634359453}]}};
-      var embedOpt = {"actions": false, "mode": "vega-lite"};
+<div id="picker"><span class="picker-label">Countries:</span></div>
+<div id="vis"></div>
+<script>
+  const spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "config": {"axis": {"domainColor": "#ece4d4", "gridColor": "#ece4d4", "labelColor": "#6b7280", "labelFontSize": 11, "tickColor": "#ece4d4", "titleColor": "#2f3542", "titleFontSize": 12}, "background": "white", "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif", "title": {"anchor": "start", "color": "#2f3542", "fontSize": 17, "fontWeight": 700, "offset": 14, "subtitleColor": "#6b7280", "subtitleFontSize": 12, "subtitlePadding": 6}, "view": {"continuousHeight": 300, "continuousWidth": 300, "stroke": null}}, "data": {"name": "data-4db49601d561a1c288f4fbe470120919"}, "datasets": {"data-4db49601d561a1c288f4fbe470120919": [{"change": 1.6706535058730592, "country": "Georgia", "end_score": 5.516784618998243, "period": "2006\u201308", "region": "Post-Soviet Eurasia", "score": 3.846131113125184, "start_score": 3.846131113125184}, {"change": 1.6706535058730592, "country": "Georgia", "end_score": 5.516784618998243, "period": "2023\u201325", "region": "Post-Soviet Eurasia", "score": 5.516784618998243, "start_score": 3.846131113125184}, {"change": 1.5968732425597132, "country": "Kosovo", "end_score": 6.909656195224591, "period": "2006\u201308", "region": "Central and Eastern Europe", "score": 5.312782952664878, "start_score": 5.312782952664878}, {"change": 1.5968732425597132, "country": "Kosovo", "end_score": 6.909656195224591, "period": "2023\u201325", "region": "Central and Eastern Europe", "score": 6.909656195224591, "start_score": 5.312782952664878}, {"change": 1.524596246073263, "country": "Latvia", "end_score": 6.365212634359453, "period": "2006\u201308", "region": "Central and Eastern Europe", "score": 4.84061638828619, "start_score": 4.84061638828619}, {"change": 1.524596246073263, "country": "Latvia", "end_score": 6.365212634359453, "period": "2023\u201325", "region": "Central and Eastern Europe", "score": 6.365212634359453, "start_score": 4.84061638828619}, {"change": 1.4691677544805488, "country": "Nicaragua", "end_score": 6.305193420396149, "period": "2006\u201308", "region": "Latin America and the Caribbean", "score": 4.8360256659156, "start_score": 4.8360256659156}, {"change": 1.4691677544805488, "country": "Nicaragua", "end_score": 6.305193420396149, "period": "2023\u201325", "region": "Latin America and the Caribbean", "score": 6.305193420396149, "start_score": 4.8360256659156}, {"change": 1.4281054924310537, "country": "Philippines", "end_score": 6.205629881252914, "period": "2006\u201308", "region": "Southeast Asia", "score": 4.777524388821861, "start_score": 4.777524388821861}, {"change": 1.4281054924310537, "country": "Philippines", "end_score": 6.205629881252914, "period": "2023\u201325", "region": "Southeast Asia", "score": 6.205629881252914, "start_score": 4.777524388821861}, {"change": 1.4075265968505404, "country": "Romania", "end_score": 6.628712837240546, "period": "2006\u201308", "region": "Central and Eastern Europe", "score": 5.221186240390006, "start_score": 5.221186240390006}, {"change": 1.4075265968505404, "country": "Romania", "end_score": 6.628712837240546, "period": "2023\u201325", "region": "Central and Eastern Europe", "score": 6.628712837240546, "start_score": 5.221186240390006}, {"change": 1.3845809820033148, "country": "Mongolia", "end_score": 5.935615509836681, "period": "2006\u201308", "region": "East Asia", "score": 4.551034527833366, "start_score": 4.551034527833366}, {"change": 1.3845809820033148, "country": "Mongolia", "end_score": 5.935615509836681, "period": "2023\u201325", "region": "East Asia", "score": 5.935615509836681, "start_score": 4.551034527833366}, {"change": 1.35684574138108, "country": "Kyrgyzstan", "end_score": 6.048761792700822, "period": "2006\u201308", "region": "Post-Soviet Eurasia", "score": 4.691916051319742, "start_score": 4.691916051319742}, {"change": 1.35684574138108, "country": "Kyrgyzstan", "end_score": 6.048761792700822, "period": "2023\u201325", "region": "Post-Soviet Eurasia", "score": 6.048761792700822, "start_score": 4.691916051319742}, {"change": 1.2718698505796855, "country": "Togo", "end_score": 4.277012107353812, "period": "2006\u201308", "region": "West and Central Africa", "score": 3.0051422567741266, "start_score": 3.0051422567741266}, {"change": 1.2718698505796855, "country": "Togo", "end_score": 4.277012107353812, "period": "2023\u201325", "region": "West and Central Africa", "score": 4.277012107353812, "start_score": 3.0051422567741266}, {"change": 1.1831583701594859, "country": "El Salvador", "end_score": 6.579144772968927, "period": "2006\u201308", "region": "Latin America and the Caribbean", "score": 5.3959864028094415, "start_score": 5.3959864028094415}, {"change": 1.1831583701594859, "country": "El Salvador", "end_score": 6.579144772968927, "period": "2023\u201325", "region": "Latin America and the Caribbean", "score": 6.579144772968927, "start_score": 5.3959864028094415}]}, "height": 360, "layer": [{"encoding": {"detail": {"field": "country", "type": "nominal"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "region", "title": "Region", "type": "nominal"}, {"field": "start_score", "format": ".2f", "title": "2006\u201308", "type": "quantitative"}, {"field": "end_score", "format": ".2f", "title": "2023\u201325", "type": "quantitative"}, {"field": "change", "format": "+.2f", "title": "Change", "type": "quantitative"}], "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"domain": ["2006\u201308", "2023\u201325"], "padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"axis": {"tickCount": 5}, "field": "score", "scale": {"domain": [2.5, 8.0]}, "title": "Life evaluation (0\u201310)", "type": "quantitative"}}, "mark": {"color": "#1a9850", "strokeWidth": 2, "type": "line"}, "transform": [{"filter": "indexof(split(sel, \"|\"), datum.country) >= 0"}]}, {"encoding": {"detail": {"field": "country", "type": "nominal"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "region", "title": "Region", "type": "nominal"}, {"field": "start_score", "format": ".2f", "title": "2006\u201308", "type": "quantitative"}, {"field": "end_score", "format": ".2f", "title": "2023\u201325", "type": "quantitative"}, {"field": "change", "format": "+.2f", "title": "Change", "type": "quantitative"}], "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"domain": ["2006\u201308", "2023\u201325"], "padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"axis": {"tickCount": 5}, "field": "score", "scale": {"domain": [2.5, 8.0]}, "title": "Life evaluation (0\u201310)", "type": "quantitative"}}, "mark": {"color": "#1a9850", "filled": true, "size": 70, "stroke": "white", "strokeWidth": 1.5, "type": "point"}, "transform": [{"filter": "indexof(split(sel, \"|\"), datum.country) >= 0"}]}, {"data": {"name": "labels", "values": [{"label_y": 3.846131113125184, "period": "2006\u201308", "text": "3.8"}, {"label_y": 5.516784618998243, "period": "2023\u201325", "text": "Georgia  5.5"}, {"label_y": 5.312782952664878, "period": "2006\u201308", "text": "5.3"}, {"label_y": 6.909656195224591, "period": "2023\u201325", "text": "Kosovo  6.9"}, {"label_y": 4.84061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.365212634359453, "period": "2023\u201325", "text": "Latvia  6.4"}, {"label_y": 4.67061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.195212634359453, "period": "2023\u201325", "text": "Nicaragua  6.3"}, {"label_y": 4.50061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.025212634359453, "period": "2023\u201325", "text": "Philippines  6.2"}]}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"domain": ["2006\u201308", "2023\u201325"], "padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"field": "label_y", "scale": {"domain": [2.5, 8.0]}, "type": "quantitative"}}, "mark": {"align": "right", "color": "#6b7280", "dx": -10, "fontSize": 11, "type": "text"}, "transform": [{"filter": "datum.period == \"2006\u201308\""}]}, {"data": {"name": "labels", "values": [{"label_y": 3.846131113125184, "period": "2006\u201308", "text": "3.8"}, {"label_y": 5.516784618998243, "period": "2023\u201325", "text": "Georgia  5.5"}, {"label_y": 5.312782952664878, "period": "2006\u201308", "text": "5.3"}, {"label_y": 6.909656195224591, "period": "2023\u201325", "text": "Kosovo  6.9"}, {"label_y": 4.84061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.365212634359453, "period": "2023\u201325", "text": "Latvia  6.4"}, {"label_y": 4.67061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.195212634359453, "period": "2023\u201325", "text": "Nicaragua  6.3"}, {"label_y": 4.50061638828619, "period": "2006\u201308", "text": "4.8"}, {"label_y": 6.025212634359453, "period": "2023\u201325", "text": "Philippines  6.2"}]}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"axis": {"domain": false, "labelAngle": 0, "labelColor": "#2f3542", "labelFontSize": 12, "ticks": false}, "field": "period", "scale": {"domain": ["2006\u201308", "2023\u201325"], "padding": 0.35}, "sort": ["2006\u201308", "2023\u201325"], "title": null, "type": "nominal"}, "y": {"field": "label_y", "scale": {"domain": [2.5, 8.0]}, "type": "quantitative"}}, "mark": {"align": "left", "color": "#2f3542", "dx": 10, "fontSize": 11, "fontWeight": 600, "type": "text"}, "transform": [{"filter": "datum.period == \"2023\u201325\""}]}], "padding": {"bottom": 5, "left": 5, "right": 95, "top": 5}, "params": [{"name": "sel", "value": "Georgia|Kosovo|Latvia|Nicaragua|Philippines"}], "title": {"subtitle": "Average life evaluation, 3-year endpoint windows", "text": "Biggest gains in happiness"}, "width": 250};
+  const COUNTRIES = [{"country": "Georgia", "start": 3.85, "end": 5.52}, {"country": "Kosovo", "start": 5.31, "end": 6.91}, {"country": "Latvia", "start": 4.84, "end": 6.37}, {"country": "Nicaragua", "start": 4.84, "end": 6.31}, {"country": "Philippines", "start": 4.78, "end": 6.21}, {"country": "Romania", "start": 5.22, "end": 6.63}, {"country": "Mongolia", "start": 4.55, "end": 5.94}, {"country": "Kyrgyzstan", "start": 4.69, "end": 6.05}, {"country": "Togo", "start": 3.01, "end": 4.28}, {"country": "El Salvador", "start": 5.4, "end": 6.58}];   // ordered biggest mover first
+  const DEFAULT_N = 5;
+  const START_LABEL = "2006–08", END_LABEL = "2023–25";
+  const Y_LO = 2.5, Y_HI = 8.0, GAP = 0.17;
 
-      function showError(el, error){
-          el.innerHTML = ('<div style="color:red;">'
-                          + '<p>JavaScript Error: ' + error.message + '</p>'
-                          + "<p>This usually means there's a typo in your chart specification. "
-                          + "See the javascript console for the full traceback.</p>"
-                          + '</div>');
-          throw error;
-      }
-      const el = document.getElementById('vis');
-      vegaEmbed("#vis", spec, embedOpt)
-        .catch(error => showError(el, error));
-    })(vegaEmbed);
+  const selected = new Set(COUNTRIES.slice(0, DEFAULT_N).map(c => c.country));
 
-  </script>
+  // Same greedy dodge as the notebook: nudge labels apart top-down.
+  function dodge(rows) {
+    const order = rows.map((r, i) => i).sort((a, b) => rows[b].y - rows[a].y);
+    let prev = Y_HI + GAP;
+    const out = {};
+    for (const i of order) { out[i] = Math.min(rows[i].y, prev - GAP); prev = out[i]; }
+    const low = Math.min(...Object.values(out), Y_HI);
+    const shift = low < Y_LO ? Y_LO - low : 0;
+    return rows.map((r, i) => out[i] + shift);
+  }
+
+  function labelRows() {
+    const rows = [];
+    const active = COUNTRIES.filter(c => selected.has(c.country));
+    const starts = dodge(active.map(c => ({ y: c.start })));
+    const ends = dodge(active.map(c => ({ y: c.end })));
+    active.forEach((c, i) => {
+      rows.push({ period: START_LABEL, label_y: starts[i], text: c.start.toFixed(1) });
+      rows.push({ period: END_LABEL, label_y: ends[i], text: c.country + "  " + c.end.toFixed(1) });
+    });
+    return rows;
+  }
+
+  vegaEmbed("#vis", spec, { actions: false, renderer: "svg" }).then(({ view }) => {
+    const picker = document.getElementById("picker");
+
+    function refresh() {
+      view.signal("sel", [...selected].join("|"));
+      view.data("labels", labelRows());
+      view.runAsync();
+    }
+
+    for (const c of COUNTRIES) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = c.country;
+      if (selected.has(c.country)) btn.classList.add("on");
+      btn.addEventListener("click", () => {
+        if (selected.has(c.country)) {
+          if (selected.size === 1) return;   // keep at least one line
+          selected.delete(c.country);
+          btn.classList.remove("on");
+        } else {
+          selected.add(c.country);
+          btn.classList.add("on");
+        }
+        refresh();
+      });
+      picker.appendChild(btn);
+    }
+
+    refresh();
+  });
+</script>
 </body>
 </html>
