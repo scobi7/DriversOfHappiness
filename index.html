@@ -175,21 +175,32 @@
       <p class="task-label">Task 5</p>
       <h2>Identify examples of positive and negative deviance</h2>
 
-      <div class="placeholder placeholder-text">
-        [text — how we identify positive/negative deviance: over 20 years, model-adjusted scores]
+      <div class="task-text">
+        <p>
+          Gallup's model of happiness -- having someone to count on, GDP per capita, healthy life expectancy, 
+          freedom to make life choices, generosity, and freedom from corruption -- allows us to predict the Cantril ladder 
+          score for a specific country, given the values for these other variables. The visualizations below show the degree 
+          to which a country is above or below its predicted happiness. It averages this positive or negative deviance from 
+          predictions over the years selected on the right. Green indicates positive deviance and red indicates negative deviance.
+        </p>
+        <p>
+          The 'Select View' option on the top right allows toggling between a map and a list of positive/negative deviance. Countries
+          that are grey (and have no pop-up when you hover over them) did not have sufficient data in the variables listed above to 
+          calculate their predicted happiness levels.
+        </p>
       </div>
 
-      <div class="placeholder placeholder-viz">
-        [map — visualizing the degree of positive/negative deviance]
-      </div>
-
-      <div class="placeholder placeholder-viz">
-        [list — countries from most positive deviant down]
-      </div>
-
-      <div class="placeholder placeholder-component">
-        [component — optional toggle between this deviance view and the Task 1 happiness view]
-      </div>
+      <!-- Map + list dashboard from Tableau -->
+      <div class='tableauPlaceholder' id='viz1784142110677' style='position: relative'><noscript><a href='#'><img alt='Map&#47;List ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;WH&#47;WHR_UsabilityStudy2&#47;MapList&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WHR_UsabilityStudy2&#47;MapList' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;WH&#47;WHR_UsabilityStudy2&#47;MapList&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1784142110677');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
     </section>
 
     <!-- ===================== TASK 6 ===================== -->
@@ -197,9 +208,50 @@
       <p class="task-label">Task 6</p>
       <h2>Understand what drives positive and negative deviance</h2>
 
-      <div class="placeholder placeholder-viz">
-        [bar charts — two bar charts stacked on top of each other: a country's average score per factor vs. the region/income-group average per factor, showing where the deviance advantage is]
+      <div class="task-text">
+        <p>
+          In the visualization below, the top chart plots the five countries that most exceed their 
+          predicted happiness and the five that most fall below theirs. The data is averaged over 
+          the selected years. When you click on a country in the top chart, the two charts below focus on that country. 
+          The middle chart compares the ways that the country most exceeds (or falls below) their income 
+          group peers globally. The bottom chart does the same for the country's regional peers.
+        </p>
+        <p>
+          In these charts, we include variables that go beyond the standard WHR six (see above), such as measures of:
+        </p>
+        <ul>
+          <li><strong>Governance.</strong> Voice and accountability, control of corruption, rule of law, political stability, 
+          government effectiveness, regulatory quality, mean governance (averages the preceding six), and mean government delivery (averages
+          control of corruption, rule of law, government effectiveness, and regulatory quality).</li>
+          <li><strong>Human development.</strong> Participation of women in parliament, years of education for men and women 
+          (expected and actual), and labor force participation by men and women.</li>
+          <li><strong>Financial equality.</strong> Share of national income held by the bottom 50% or middle 40%.</li> 
+          <li><strong>Emotions.</strong> Experience enjoyment yesterday, positive affect (averages measures of smiling, 
+          enjoying, and doing something interesting yesterday).</li>
+          </ul>
+        <p>
+          In addition, we standardized the variable values so that measures with very different units (such as GDP per capita and the percent of people 
+          who smiled yesterday) can be compared on a common scale. The x axis in the bottom two charts shows how far the selected country is from its 
+          peer-group average, measured in standard deviations for each variable. So if a country is 1.8 standard deviations above its peer average, 
+          it is nearly twice the average difference from the group average with respect to that variable. 
+        </p>
+        <p>
+          The charts capture the best five variables for countries with positive deviance and the worst five variables for countries with negative
+          deviance. However, if there are less than five advantages or disadvantages, the chart will show a mix of advantages and disadvantages.
+        </p>
       </div>
+
+      <!-- bar charts from Tableau -->
+      <div class='tableauPlaceholder' id='viz1784145551840' style='position: relative'><noscript><a href='#'><img alt='Advantages ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;WH&#47;WHR_UsabilityStudy2&#47;Advantages&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WHR_UsabilityStudy2&#47;Advantages' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;WH&#47;WHR_UsabilityStudy2&#47;Advantages&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1784145551840');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
     </section>
 
   </main>
