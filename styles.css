@@ -241,6 +241,28 @@ main {
   margin-bottom: 1.25rem;
 }
 
+/* wider frame for Tableau? */
+.tableau-wide {
+  width: min(1350px, calc(100vw - 32px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Tableau range 1100×900 to 1350×1010 */
+.tableau-dashboard {
+  height: clamp(
+    900px,
+    calc((100vw - 32px) * 0.75),
+    1010px
+  );
+}
+
+.tableau-dashboard tableau-viz {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
