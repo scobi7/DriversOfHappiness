@@ -81,10 +81,22 @@
       <p class="task-label">Introduction</p>
       <div class="task-text">
         <p>
-          The World Happiness Report (WHR) is published by the University of Oxford's 
+          The 
+          <a 
+            href = "https://www.worldhappiness.report/"
+            target="_blank"
+            rel="noopener">
+            World Happiness Report
+          </a> 
+          (WHR) is published by the University of Oxford's 
           Wellbeing Research Centre in partnership with Gallup and the UN Sustainable 
-          Development Solutions Network. Its underlying data comes from the Gallup 
-          World Poll. It measures happiness using the following question, which 
+          Development Solutions Network. Its underlying data comes from the 
+          <a 
+            href="https://www.gallup.com/analytics/318875/global-research.aspx" 
+            target="_blank" 
+            rel="noopener">
+            Gallup World Poll
+          </a>. It measures happiness using the following question, which 
           refers to Cantril's ladder: 
         </p>
         <p class ="indented-italic">
@@ -109,6 +121,50 @@
         <p>
           In the WHR data, these variables are correlated with higher numbers on Cantril's ladder. 
           However, the WHR data cannot prove causality.
+        </p>
+        <p>
+          Below, we look at these six WHR variables, additional variables from the Gallup World Poll,
+          and variables from the following:
+        </p>
+        <ul>
+          <li><strong><a 
+            href="https://hdr.undp.org/data-center/human-development-index"
+            target="_blank" 
+            rel="noopener">
+            Human Development Index
+          </a></strong>. 
+          These include measures of the participation of women in parliament, 
+          years of education for men and women (expected and actual), and labor force participation 
+          by men and women. The Human Development Index itself is a blend of healthy life expectancy,
+          education, and GDP per capita. It also includes measures of gender inequality and inequality in healthy life expectancy. 
+          </li> 
+          <li>The <strong><a 
+            href="https://wid.world/"
+            target="_blank" 
+            rel="noopener">
+            World Inequality Database
+          </a></strong>. 
+          These include the share of a nation's income held by the bottom 50% and the middle 40% (versus the top 1% or 10%).
+          </li>
+          <li><strong><a
+            href="https://www.worldbank.org/en/publication/worldwide-governance-indicators" 
+            target="_blank" 
+            rel="noopener">
+            World Governance Indicators
+          </a></strong>.
+          These include measures of democracy (voice and accountability), political stability, and government 
+          effectiveness (regulatory quality, rule of law, control of corruption, and government effectiveness).
+          The mean governance score averages these six measures, and the mean government delivery score averages
+          the four elements of government effectiveness.
+          </li>
+        </ul>
+        <p> 
+          Many of these variables are correlated with the WHR six. For example, the freedom to make
+          choices is moderately correlated with a country's government effectiveness score. We hypothesize
+          that some of these additional variables may play a role in shaping the WHR six.
+        </p>
+        <p>
+          Note: At the bottom of this page, we describe some of the variables in more detail for those interested.
         </p>
       </div>
     </section>
@@ -304,9 +360,76 @@
   </main>
 
   <footer class="site-footer">
-    <p>DATASCI 209 &middot; Drivers of Happiness &middot; Data: <a href="https://worldhappiness.report/" target="_blank" rel="noopener">World Happiness Report</a></p>
-    <div class="placeholder placeholder-text">
-      [team — names, acknowledgments, data notes]
+    <p>DATASCI 209 &middot; Drivers of Happiness &middot; Data: <a href="https://worldhappiness.report/" target="_blank" rel="noopener">World Happiness Report</a>
+    </p>
+    <div class="task-text">
+      <p>
+        <strong>Team</strong>: Clarice Larson, Malachi Nguyen, Kathy Camp
+      </p>
+      <p>
+        Notes on variables mentioned:
+      </p>
+      <ul>
+        <li><strong>Coefficient of human inequality</strong>. This is an average of inequality in health, education, and income.</li>
+        <li><strong>Corruption perception</strong>. This variable is the average of those answering in the affirmative to these two questions: 
+          (1) "Is corruption widespread throughout the government or not" (2) "Is corruption widespread within businesses or not?" 
+        </li>
+        <li><strong>GDP per capita</strong>. 
+          This measures a country's economic output per person. Values are expressed in constant 2021 "international dollars," where one
+          international dollar has approximately the same purchasing power as one U.S. dollar had in the United States in 2021. This data comes 
+          from the World Bank's World Development Indicators.
+        </li>
+        <li><strong>Gender inequality index</strong>. 
+          This measure incorporates reproductive health, share of parliamentary seats held by women, 
+          the percentage of women with at least some secondary education, and women's labor force participation.
+        </li>
+        <li><strong>Generosity</strong>. 
+          Generosity uses GDP per capita to establish a predicted number for individual monetary donations for the question 
+          "Have you donated money to a charity in the past month?" A negative number means that a country's citizens are less generous that predicted 
+          by its GDP per capita and a positive number means that its citizens are more generous than predicted.
+        </li>
+        <li><strong>Healthy life expectancy</strong>. 
+          Healthy life expectancies at birth is the expected number of years a person in a given country will remain healthy.
+        </li>
+        <li><strong>Mean governance score</strong>. 
+          This is an average of the six governance measures: voice and accountability, control of corruption, 
+          rule of law, political stability, government effectiveness, regulatory quality.
+        </li>
+        <li><strong>Mean government delivery score</strong>. 
+          This is an average of four of the governance measures: control of corruption, rule of law, government effectiveness, and regulatory quality
+        </li>
+        <li><strong>Negative affect</strong>. 
+          This is an average of the following questions (when available): 
+          (1) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Worry?" 
+          (2) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Sadness?" 
+          (3) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Anger?" 
+        </li>
+        <li><strong>Negative experience index</strong>. 
+          This is an average of the following questions (when available): 
+          (1) "Did you experience the following feelings during a lot of the day yesterday? How about physical pain?"
+          (2) "Did you experience the following feelings during a lot of the day yesterday? How about stress?"
+          (3) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Worry?"
+          (4) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Sadness?"
+          (5) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Anger?"          
+        </li>
+        <li><strong>Positive affect</strong>. 
+          This is an average of the following questions (when available): (1) "Did you smile or laugh a lot yesterday?" 
+          (2) "Did you experience the following feelings during A LOT OF THE DAY yesterday? How about Enjoyment?" 
+          (3) "“Did you learn or do something interesting yesterday?"  
+        </li>
+        <li><strong>Positive experience index</strong>. 
+          This is an average of the following questions (when available): 
+          (1) "Did you feel well-rested yesterday?"
+          (2) "Were you treated with respect all day yesterday?"
+          (3) "Did you smile or laugh a lot yesterday?"
+          (4) "Did you learn or do something interesting yesterday?"
+          (5) "Did you experience the following feelings during a lot of the day yesterday? How about enjoyment?"
+        </li>
+        <li><strong>Social support</strong>. 
+          Social support is a country's national average of those who answer yes to the following question: "If you were in trouble, 
+          do you have relatives or friends you can count on to help you whenever you need them, or not?"
+        </li>
+      </ul>
     </div>
   </footer>
 
