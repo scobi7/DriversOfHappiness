@@ -183,6 +183,12 @@ main {
   margin: 0.5rem 0 0.75rem;
 }
 
+/* added to indent/italicize Cantril ladder question */
+.indented-italic {
+  margin-left: 1.5rem;
+  font-style: italic;
+}
+
 /* ---------- placeholders ---------- */
 
 .placeholder {

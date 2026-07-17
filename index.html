@@ -76,6 +76,41 @@
 
   <main>
 
+    <!-- ===================== INTRO ===================== -->
+     <section id="task-1" class="task">
+      <p class="task-label">Introduction</p>
+      <p>
+        The World Happiness Report (WHR) is published by the University of Oxford's 
+        Wellbeing Research Centre in partnership with Gallup and the UN Sustainable 
+        Development Solutions Network. Its underlying data comes from the Gallup 
+        World Poll. It measures happiness using the following question, which 
+        refers to Cantril's ladder: 
+      </p>
+      <p class ="indented-italic">
+        "Please imagine a ladder with steps numbered from 0 at the bottom to 10 at the top. 
+        The top of the ladder represents the best possible life for you and the bottom of the 
+        ladder represents the worst possible life for you. On which step of the ladder would 
+        you say you personally feel you stand at this time?" 
+      </p>
+      <p>
+        The WHR team has been measuring happiness for 20 years (2006-2025), and has found that 
+        six variables account for more than three-quarters of the variation in how people answer 
+        this question: 
+      </p>
+      <ul>
+          <li>Having someone to count on for help</li>
+          <li>GDP per capita</li>
+          <li>Healthy life expectancy</li>
+          <li>Freedom to make life choices</li>  
+          <li>Generosity</li>
+          <li>Freedom from corruption in government or business</li>
+          </ul>
+      <p>
+        In the WHR data, these variables are correlated with higher numbers on Cantril's ladder. 
+        However, the WHR data cannot prove causality.
+      </p>
+
+
     <!-- ===================== TASK 1 ===================== -->
     <section id="task-1" class="task">
       <p class="task-label">Task 1</p>
@@ -193,14 +228,14 @@
 
       <div class="task-text">
         <p>
-          Gallup's model of happiness -- having someone to count on, GDP per capita, healthy life expectancy, 
+          Gallup's model of happiness -- having someone to count on, sufficient GDP per capita, healthy life expectancy, 
           freedom to make life choices, generosity, and freedom from corruption -- allows us to predict the Cantril ladder 
           score for a specific country, given the values for these other variables. The visualizations below show the degree 
           to which a country is above or below its predicted happiness. It averages this positive or negative deviance from 
           predictions over the years selected on the right. Green indicates positive deviance and red indicates negative deviance.
         </p>
         <p>
-          The 'Select View' option on the top right allows toggling between a map and a list of positive/negative deviance. Countries
+          The 'Select View' option on the top right allows toggling between a map and a ranked list of countries by deviance (positive to negative). Countries
           that are grey (and have no pop-up when you hover over them) did not have sufficient data in the variables listed above to 
           calculate their predicted happiness levels.
         </p>
@@ -224,8 +259,8 @@
       <div class="task-text">
         <p>
           In the visualization below, the top chart plots the five countries that most exceed their 
-          predicted happiness and the five that most fall below theirs. The data is averaged over 
-          the selected years. When you click on a country in the top chart, the two charts below focus on that country. 
+          predicted happiness and the five that most fall short of theirs. The data is averaged over 
+          the years selected. When you click on a country bar in the top chart, the two charts below focus on that country. 
           The middle chart compares the ways that the country most exceeds (or falls below) their income 
           group peers globally. The bottom chart does the same for the country's regional peers.
         </p>
