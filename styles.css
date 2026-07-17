@@ -189,6 +189,12 @@ main {
   font-style: italic;
 }
 
+/* make the links yellow */
+.task-text a,
+.task-text a:visited {
+  color: var(--sun-deep);
+}
+
 /* ---------- placeholders ---------- */
 
 .placeholder {
