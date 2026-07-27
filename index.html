@@ -67,7 +67,7 @@
   <!-- ===================== NAV ===================== -->
   <nav class="task-nav">
     <a href="#task-1">Happiest &amp; Least Happy</a>
-    <a href="#task-2">Compare Countries</a>
+    <a href="#task-2">What Drives Happiness</a>
     <a href="#task-3">Happiness Over Time</a>
     <a href="#task-4">Demographics</a>
     <a href="#task-5">Deviance Map</a>
@@ -167,8 +167,8 @@
 
     <!-- ===================== TASK 1 ===================== -->
     <section id="task-1" class="task">
-      <p class="task-label">Task 1</p>
-      <h2>Quickly identify the most and least happy countries</h2>
+      <p class="task-label">Section 1</p>
+      <h2>How happy is the world</h2>
 
       <div class="task-text">
         <p>
@@ -203,34 +203,41 @@
 
     <!-- ===================== TASK 2 ===================== -->
     <section id="task-2" class="task">
-      <p class="task-label">Task 2</p>
-      <h2>Compare countries and understand the factors underlying their life satisfaction scores</h2>
-
-      <div class="viz-row">
-        <iframe src="charts/task2_slopegraph_gains.html" class="viz-frame"
-                loading="lazy" style="min-height: 580px"
-                title="Countries with the biggest gains in happiness"></iframe>
-        <iframe src="charts/task2_slopegraph_declines.html" class="viz-frame"
-                loading="lazy" style="min-height: 580px"
-                title="Countries with the biggest declines in happiness"></iframe>
-      </div>
+      <p class="task-label">Section 2</p>
+      <h2>What actually drives a country's happiness?</h2>
 
       <div class="task-text">
         <p>
-          Each line shows a country's average life evaluation at two points in
-          time, comparing the 2006-2008 average with the 2023-2025 average so
-          that one unusual survey year cannot drive the ranking.
+          Six factors explain roughly three-quarters of the variation in
+          happiness across countries &mdash; but they do not pull equally.
+          The chart below tracks life evaluation over time, with the three
+          happiest and three least happy countries highlighted and the rest
+          of the world shown faintly for context. Color encodes each
+          country's most recent life evaluation, from red (low) to green
+          (high).
         </p>
-        <p class="task-text">
-          The biggest gains cluster in Eastern Europe, Central Asia, and Latin
-          America, with countries like Georgia, Kosovo, and Latvia climbing
-          about a point and a half as their economies and institutions
-          matured. The steepest declines include countries under visible
-          economic or political strain such as Lebanon, Egypt, and Venezuela,
-          which suggests happiness responds to stability and governance as
-          much as to income.
+        <p>
+          <strong>Click any line</strong> to break that country's score into
+          its drivers. We group the factors into five buckets &mdash; GDP per
+          capita, healthy life expectancy, social support, government
+          effectiveness, and everything else combined &mdash; and show how
+          much each one contributes to the score, measured against the
+          world's lowest values. <strong>Shift-click</strong> to spotlight
+          additional countries on the line chart.
+        </p>
+        <p>
+          The pattern is consistent: <strong>social support, healthy life
+          expectancy, and GDP per capita</strong> do most of the work, while
+          government effectiveness and the remaining factors add smaller,
+          steadier amounts. Wealthy Nordic countries and struggling states
+          differ less in any single driver than in how those drivers stack up
+          together.
         </p>
       </div>
+
+      <iframe src="charts/task2_drivers.html" class="viz-frame"
+              loading="lazy" style="min-height: 760px"
+              title="Life evaluation over time with per-country driver breakdown"></iframe>
     </section>
 
     <!-- ===================== TASK 3 ===================== -->
