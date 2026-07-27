@@ -177,6 +177,24 @@ main {
   text-indent: 1.5em;
 }
 
+/* added to ensure bullets align properly */
+.task-text ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+/* added to indent/italicize Cantril ladder question */
+.indented-italic {
+  margin-left: 1.5rem;
+  font-style: italic;
+}
+
+/* make the links yellow */
+.task-text a,
+.task-text a:visited {
+  color: var(--sun-deep);
+}
+
 /* ---------- placeholders ---------- */
 
 .placeholder {
@@ -239,6 +257,28 @@ main {
   border-radius: 10px;
   background: var(--card);
   margin-bottom: 1.25rem;
+}
+
+/* wider frame for Tableau? */
+.tableau-wide {
+  width: min(1350px, calc(100vw - 32px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Tableau range 1100×900 to 1350×1010 */
+.tableau-dashboard {
+  height: clamp(
+    900px,
+    calc((100vw - 32px) * 0.75),
+    1010px
+  );
+}
+
+.tableau-dashboard tableau-viz {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* ---------- footer ---------- */
