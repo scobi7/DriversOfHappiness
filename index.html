@@ -210,20 +210,20 @@
         <p>
           Six factors explain roughly three-quarters of the variation in
           happiness across countries &mdash; but they do not pull equally.
-          The chart below tracks life evaluation over time, with the three
-          happiest and three least happy countries highlighted and the rest
-          of the world shown faintly for context. Color encodes each
+          The chart below tracks life evaluation over time, starting with the
+          three happiest and three least happy countries. Color encodes each
           country's most recent life evaluation, from red (low) to green
           (high).
         </p>
         <p>
-          Use the <strong>Country dropdown</strong> below the chart to pick
-          any country, then <strong>click a year-dot</strong> on its line to
-          break that specific year's score into its drivers. We group the
-          factors into five buckets &mdash; GDP per capita, healthy life
-          expectancy, social support, government effectiveness, and everything
-          else combined &mdash; and show how much each one contributes to the
-          score, measured against the world's lowest values.
+          Use the <strong>controls at the top</strong> of the chart to turn a
+          country's line on or off, or add any country you like. Then
+          <strong>click a year-dot</strong> on a line to break that specific
+          year's score into its drivers. We group the factors into five
+          buckets &mdash; GDP per capita, healthy life expectancy, social
+          support, government effectiveness, and everything else combined
+          &mdash; and show how much each one contributes to the score,
+          measured against the world's lowest values.
         </p>
         <p>
           The pattern is consistent: <strong>social support, healthy life
@@ -235,8 +235,8 @@
         </p>
       </div>
 
-      <iframe src="charts/task2_drivers.html" class="viz-frame"
-              loading="lazy" style="min-height: 1040px"
+      <iframe id="task2-frame" src="charts/task2_drivers.html" class="viz-frame"
+              loading="lazy" scrolling="no" style="min-height: 720px"
               title="Life evaluation over time with per-country driver breakdown"></iframe>
     </section>
 
@@ -423,6 +423,16 @@
       </ul>
     </div>
   </footer>
+
+  <!-- auto-size the Task 2 D3 dashboard iframe to its content (no inner scrollbar) -->
+  <script>
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "task2-resize") {
+        var f = document.getElementById("task2-frame");
+        if (f && e.data.height > 200) f.style.height = e.data.height + "px";
+      }
+    });
+  </script>
 
 </body>
 </html>
