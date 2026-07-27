@@ -40,12 +40,10 @@
 </head>
 <body>
 <div id="wrap">
-  <h3>Life evaluation over time, 2006&ndash;2025</h3>
-  <div class="sub">Top&nbsp;3 and bottom&nbsp;3 shown by default. Toggle a country chip to turn its line on or off, add any country from the dropdown, then click a year-dot on a line to break down that year below.</div>
+  <h3>Life evaluation over time</h3>
   <div class="filter" id="filter"></div>
   <svg id="line"></svg>
   <div class="secttitle">What explains this country&rsquo;s happiness?</div>
-  <div class="sectsub">Each driver&rsquo;s contribution to the score, vs. the world&rsquo;s lowest values (dystopia baseline). Click a year-dot above to change the country/year.</div>
   <svg id="bars"></svg>
 </div>
 <div class="tip" id="tip"></div>
@@ -69,10 +67,10 @@ function renderFilter(){
   f.append("span").attr("class","lab").text("Countries:");
   const order=[...state.active.keys()];
   f.selectAll("span.chip").data(order,d=>d).join("span")
-    .attr("class",d=>"chip"+(state.active.get(d)?"":" off"))
-    .on("click",(e,d)=>{ state.active.set(d,!state.active.get(d));
-      if(!state.active.get(d) && state.sel.country===d){
-        const on=[...state.active].filter(x=>x[1]).map(x=>x[0]);
+    .attr("class","chip").attr("title","Click to remove")
+    .on("click",(e,d)=>{ state.active.delete(d);
+      if(state.sel.country===d){
+        const on=[...state.active.keys()];
         if(on.length) state.sel={country:on[0],year:latestYear(on[0])};
       }
       draw(); })
@@ -150,7 +148,7 @@ function drawBars(){
   const g=svg.append("g").attr("transform",`translate(${m.l},${m.t})`);
   // header
   svg.append("text").attr("class","bhead").attr("x",4).attr("y",20)
-    .text(data?`${state.sel.country} — ${data.year} · life evaluation ${data.le.toFixed(2)}`:"");
+    .text(data?`${state.sel.country}, ${data.year} · life evaluation ${data.le.toFixed(2)}`:"");
   if(!data){ return; }
   const rows=DRIVERS.map(d=>({driver:d,pct:data.d[d]})).sort((a,b)=>b.pct-a.pct);
   const x=d3.scaleLinear().domain([-20,40]).range([0,iw]);
