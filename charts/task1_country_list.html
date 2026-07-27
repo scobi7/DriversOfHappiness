@@ -5,7 +5,15 @@
   <style>
     #vis.vega-embed {
       width: 100%;
-      display: flex;
+      position: relative;
+    }
+
+    /* pin the Year slider to the top-right, level with the chart title */
+    #vis.vega-embed .vega-bindings {
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: right;
     }
 
     #vis.vega-embed details,
