@@ -81,12 +81,12 @@
       <p class="task-label">Introduction</p>
       <div class="task-text">
         <p>
-          The 
+          WILL UPDATE TEXT: The 
           <a 
             href = "https://www.worldhappiness.report/"
             target="_blank"
             rel="noopener"
-          >WILL UPDATE TEXT: World Happiness Report</a>
+          >World Happiness Report</a>
           (WHR) is published by the University of Oxford's 
           Wellbeing Research Centre in partnership with Gallup and the UN Sustainable 
           Development Solutions Network. Its underlying data comes from the 
@@ -298,9 +298,13 @@
       </div>
 
       <!-- Map from Altair -->
-      <iframe src="charts/task5_deviance_map.html" class="viz-frame"
-              loading="lazy" style="min-height: 660px"
-              title="Countries that are Happier and Less Happy Than Expected"></iframe>
+      <iframe 
+        src="charts/task5_deviance_map.html" 
+        class="viz-frame"
+        loading="lazy" 
+        style="min-height: 660px"
+        title="Countries that are Happier and Less Happy Than Expected">
+      </iframe>
     </section>
 
     <!-- ===================== TASK 6 ===================== -->
@@ -330,9 +334,14 @@
       </div>
 
       <!-- bar charts from Altair -->
-      <iframe src="charts/task6_deviance_chart.html" class="viz-frame"
-              loading="lazy" style="min-height: 660px"
-              title="Top Countries More and Less Happy Than Predicted"></iframe>
+      <iframe 
+        id="task6-frame"
+        src="charts/task6_deviance_chart.html" 
+        class="viz-frame viz-frame-autosize"
+        loading="lazy" 
+        scrolling="no"
+        title="Top Countries More and Less Happy Than Predicted">
+      </iframe>
     </section>
 
   </main>
@@ -417,6 +426,23 @@
       if (e.data && e.data.type === "task2-resize") {
         var f = document.getElementById("task2-frame");
         if (f && e.data.height > 200) f.style.height = e.data.height + "px";
+      }
+    });
+  </script>
+  <!-- Task 6 script-->
+  <script>
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "task6-resize") {
+        var f = document.getElementById("task6-frame");
+
+        if (
+          f &&
+          e.source === f.contentWindow &&
+          Number.isFinite(Number(e.data.height)) &&
+          Number(e.data.height) > 200
+        ) {
+          f.style.height = Math.ceil(Number(e.data.height)) + 2 + "px";
+        }
       }
     });
   </script>
