@@ -37,7 +37,7 @@
   }
   #vis.vega-embed .vega-bindings {
     position: absolute;
-    top: 0;
+    top: -10px;
     right: 0;
     margin-top: 0;
     color: #6b7280;
@@ -48,6 +48,11 @@
     accent-color: #f6b93b;
     width: 260px;
     vertical-align: middle;
+  }
+  /* give the map + legend a little breathing room below the controls */
+  #vis.vega-embed svg {
+    margin-top: 16px;
+    display: block;
   }
 </style>
 </head>

@@ -140,8 +140,8 @@ function drawLine(){
 
 function drawBars(){
   const svg=d3.select("#bars"); svg.selectAll("*").remove();
-  const W=svg.node().clientWidth||820, H=250;
-  const m={t:34,r:64,b:30,l:168};
+  const W=svg.node().clientWidth||820, H=264;
+  const m={t:34,r:64,b:40,l:168};
   const iw=W-m.l-m.r, ih=H-m.t-m.b;
   svg.attr("height",H);
   const data=contribFor(state.sel.country,state.sel.year);
@@ -157,7 +157,7 @@ function drawBars(){
     .call(d3.axisBottom(x).tickValues(d3.range(-20,41,10)).tickFormat(d=>d+"%"));
   g.append("line").attr("x1",x(0)).attr("x2",x(0)).attr("y1",0).attr("y2",ih)
     .attr("stroke","var(--line)");
-  g.append("text").attr("x",iw/2).attr("y",ih+26).attr("text-anchor","middle")
+  g.append("text").attr("x",iw/2).attr("y",ih+30).attr("text-anchor","middle")
     .style("font-size","12px").style("font-weight","600").attr("fill","var(--ink)")
     .text("Share of life-evaluation score explained (%)");
   const cbar=color(data.le);
