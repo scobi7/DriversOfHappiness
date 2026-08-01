@@ -31,9 +31,20 @@
   #controls span { color: #6b7280; font-size: 13px; }
   /* cross-fade country fills between years */
   #vis svg path { transition: fill 0.45s ease; }
-  /* theme the vega slider row */
-  #vis .vega-bindings { margin-top: 10px; color: #6b7280; font-size: 13px; }
-  #vis .vega-bindings input[type="range"] {
+  /* pin the Year slider to the top-right of the map */
+  #vis.vega-embed {
+    position: relative;
+  }
+  #vis.vega-embed .vega-bindings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    color: #6b7280;
+    font-size: 13px;
+    text-align: right;
+  }
+  #vis.vega-embed .vega-bindings input[type="range"] {
     accent-color: #f6b93b;
     width: 260px;
     vertical-align: middle;
@@ -43,7 +54,7 @@
 <body>
 <div id="controls">
   <button id="play" type="button">&#9654;&nbsp; Play</button>
-  <span>animates 2006 &rarr; 2025, or drag the slider below the map</span>
+  <span>animates 2006 &rarr; 2025, or drag the slider at the top right</span>
 </div>
 <div id="vis"></div>
 <script>
