@@ -88,6 +88,17 @@
         view.signal("year_sel", y).runAsync();
       }, STEP_MS);
     });
+
+    function postHeight() {
+      if (window.parent) {
+        window.parent.postMessage(
+          { type: "task1-resize", height: document.body.scrollHeight + 6 },
+          "*"
+        );
+      }
+    }
+    postHeight();
+    window.addEventListener("resize", postHeight);
   });
 </script>
 </body>

@@ -192,8 +192,8 @@
         </p>
       </div>
 
-      <iframe src="charts/task1_choropleth.html" class="viz-frame"
-              loading="lazy" style="min-height: 660px"
+      <iframe id="task1-choropleth-frame" src="charts/task1_choropleth.html" class="viz-frame"
+              loading="lazy" style="min-height: 300px"
               title="World happiness choropleth with year slider and play button"></iframe>
 
       <iframe src="charts/task1_country_list.html" class="viz-frame"
@@ -420,6 +420,15 @@
     </div>
   </footer>
 
+  <!-- auto-size the Task 1 choropleth iframe to its content (no leftover white space) -->
+  <script>
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "task1-resize") {
+        var f = document.getElementById("task1-choropleth-frame");
+        if (f && e.data.height > 200) f.style.height = e.data.height + "px";
+      }
+    });
+  </script>
   <!-- auto-size the Task 2 D3 dashboard iframe to its content (no inner scrollbar) -->
   <script>
     window.addEventListener("message", function (e) {
