@@ -57,7 +57,7 @@
 
       <p class="intro-why">
         <strong>Why it matters:</strong> understanding the relative importance of
-        economic, societal, institutional, and technological factors in citizens'
+        economic, societal, and institutional factors in citizens'
         happiness and well-being could help policymakers create more effective
         legislation.
       </p>
@@ -193,17 +193,23 @@
     <!-- ===================== TASK 3 ===================== -->
     <section id="task-3" class="task">
       <p class="task-label">Section 3</p>
-      <h2>How does happiness for a country change over time?</h2>
+      <h2>How have happiness and social support moved together over time?</h2>
 
       <div class="task-text">
         <p>
-          In the section above, the factors that contributed to a country's happiness score for 
-          2025 were shown, but how do those values change over time? A country's happiness can be 
-          affected by many factors, but out of the 6 the WHR focused on having someone to count on
-          (social support) was more highly correlate with happiness (correlation coefficient 
-          of 0.73) as compared to GDP per capita (correlation coefficent of 0.72). 
-          Malawi, Costa Rica, and Serbia were chosen by default in the graph below to illustrate this trend. 
-          You can also add 2 other countries to see how well the trend holds. 
+          In the previous section, the factors that came up repeatedly were  
+          social support, healthy life expectancy, and GDP per capita. 
+          Out of these 3 factors, <strong>social support</strong> has the highest association with happiness. 
+          Three countries are shown by default to illustrate the relationship: Malawi (low social
+          support), Costa Rica (high social support), and Serbia (rising social support).
+          You can also add 2 other countries to see how well the relationship holds. 
+        </p>
+        <p>
+          The graph on the left shows the relationship between happiness and social support 
+          over time with a regression line fit to all countries. Bubbles turn gray if
+          there is no data for that year and data from the previous year is carried forward. 
+          On the right, a slope graph shows the delta in happiness for a country from 2006 to
+          2025.
         </p>
       </div>
 
@@ -215,20 +221,24 @@
     <!-- ===================== TASK 4 ===================== -->
     <section id="task-4" class="task">
       <p class="task-label">Section 4</p>
-      <h2>Money and social support matter but who is benefitting the most?</h2>
+      <h2>Social support matters but who is benefitting the most?</h2>
 
       <div class="task-text">
         <p>
           Let's continue to explore Malawi, Costa Rica, and Serbia to see if happiness 
           is consistent across different age groups and genders. In 
-          addition to each demographic group, the overall happiness score for the country has
-          also been provided. Annotations have been placed on years where an influential 
+          addition to each demographic group, the overall happiness score for the country is provided. 
+          Annotations are placed on years where an influential 
           event took place to also acknowledge that different countries face different realities 
           during the same periods of time.
         </p>
+        <p>
+          You change the country using the selector in the top right. The dashed line shows 
+          the country's overall happiness score for reference.
+        </p>
       </div>
 
-      <iframe src="charts/annotated_demographics_tr_red.html" class="viz-frame"
+      <iframe src="charts/annotated_demographics_tr_red_cb.html" class="viz-frame"
               loading="lazy" style="min-height:700px;" 
               title="Demographics for the Malawi, Serbia, and Costa Rica"></iframe>
     </section>

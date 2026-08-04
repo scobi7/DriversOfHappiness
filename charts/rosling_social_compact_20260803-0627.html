@@ -2386,13 +2386,6 @@ function renderRosling() {
       .attr("stroke", "#000").attr("stroke-width", 2)
       .attr("stroke-dasharray", "4,4").attr("opacity", 0.6);
 
-    if (Number.isFinite(FIT.r)) {
-      g.append("text")
-        .attr("x", iw - 4).attr("y", ih - 8)
-        .attr("text-anchor", "end")
-        .attr("font-size", 12).attr("font-weight", 700).attr("fill", "#374151")
-        .text(`r = ${FIT.r.toFixed(2)}`);
-    }
   }
 
   const line = d3.line()
