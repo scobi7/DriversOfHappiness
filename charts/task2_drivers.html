@@ -40,7 +40,7 @@
 </head>
 <body>
 <div id="wrap">
-  <h3>Life evaluation over time</h3>
+  <h3>Happiness over time</h3>
   <div class="filter" id="filter"></div>
   <svg id="line"></svg>
   <div class="secttitle">What explains this country&rsquo;s happiness?</div>
@@ -103,7 +103,7 @@ function drawLine(){
     .call(d3.axisBottom(x).tickValues(d3.range(YMIN,YMAX+1,2)).tickFormat(d3.format("d")));
   g.append("text").attr("x",-ih/2).attr("y",-26).attr("transform","rotate(-90)")
     .attr("text-anchor","middle").style("font-size","12px").style("font-weight","600")
-    .attr("fill","var(--ink)").text("Life evaluation");
+    .attr("fill","var(--ink)").text("Happiness score");
 
   const on=[...state.active].filter(d=>d[1]).map(d=>d[0]);
   const line=d3.line().x(d=>x(d[0])).y(d=>yv(d[1]));
@@ -133,7 +133,7 @@ function drawLine(){
       .on("click",(e,d)=>{ state.sel={country:d.c,year:d.year}; draw(); })
       .on("mousemove",(e,d)=>{ tip.style("opacity",1)
         .style("left",(e.clientX+12)+"px").style("top",(e.clientY+12)+"px")
-        .html(`<b>${d.c}</b><br>${d.year} · life eval ${d.le.toFixed(2)}`); })
+        .html(`<b>${d.c}</b><br>${d.year} · happiness score ${d.le.toFixed(2)}`); })
       .on("mouseleave",()=>tip.style("opacity",0));
   });
 }
@@ -148,7 +148,7 @@ function drawBars(){
   const g=svg.append("g").attr("transform",`translate(${m.l},${m.t})`);
   // header
   svg.append("text").attr("class","bhead").attr("x",4).attr("y",20)
-    .text(data?`${state.sel.country}, ${data.year} · life evaluation ${data.le.toFixed(2)}`:"");
+    .text(data?`${state.sel.country}, ${data.year} · happiness score ${data.le.toFixed(2)}`:"");
   if(!data){ return; }
   const rows=DRIVERS.map(d=>({driver:d,pct:data.d[d]})).sort((a,b)=>b.pct-a.pct);
   const x=d3.scaleLinear().domain([-20,40]).range([0,iw]);
@@ -159,7 +159,7 @@ function drawBars(){
     .attr("stroke","var(--line)");
   g.append("text").attr("x",iw/2).attr("y",ih+30).attr("text-anchor","middle")
     .style("font-size","12px").style("font-weight","600").attr("fill","var(--ink)")
-    .text("Share of life-evaluation score explained (%)");
+    .text("Share of happiness score explained (%)");
   const cbar=color(data.le);
   g.selectAll("rect").data(rows).join("rect")
     .attr("y",d=>yb(d.driver)).attr("height",yb.bandwidth())
